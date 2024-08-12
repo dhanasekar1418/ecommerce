@@ -8,7 +8,7 @@ const cartRoutes = require("./routes/cartRoutes")
 const orderRoutes = require('./routes/orderRoutes');
 
 mongoose.connect(
-    "mongodb://localhost:27017/"
+    "mongodb+srv://dhanasekar:dhanasekar14@cluster0.ius73fo.mongodb.net/"
 ).then(()=>{
     console.log("connected to MongoDB");
 })
