@@ -1,9 +1,13 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
+
 const productRoutes = require("./routes/productRoutes")
 const userRoutes = require("./routes/userRoutes")
 const mongoose = require ("mongoose");
 app.use(express.json());
+app.use(cors());
+
 const cartRoutes = require("./routes/cartRoutes")
 const orderRoutes = require('./routes/orderRoutes');
 
