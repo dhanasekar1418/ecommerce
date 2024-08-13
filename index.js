@@ -18,7 +18,7 @@ mongoose.connect(
 })
 
 app.use("/products",productRoutes);
-// app.use("/user",userRoutes);
+app.use("/user",userRoutes);
 app.use("/cart",cartRoutes);
 app.use("/order",orderRoutes);
 
