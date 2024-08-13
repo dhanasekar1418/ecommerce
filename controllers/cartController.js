@@ -53,10 +53,10 @@ exports.getcart = async (req,res) => {
                 
                 return {
                     product_id: productDetails.id,
-                    title: productDetails.title,
+                    name: productDetails.name,
                     description: productDetails.description,
                     price: productDetails.price,
-                    image: productDetails.image,
+                    image_url: productDetails.image_url,
                     quantity: product.quantity
                 };
             })

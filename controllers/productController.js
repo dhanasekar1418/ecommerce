@@ -13,15 +13,15 @@ exports.getProducts = async (req, res)=>{
 
  exports.createProduct = async(req,res)=>{
     try{
-        const { title, description, price, category, rating, image } = req.body;
+        const { name, description, price, category, rating, image_url } = req.body;
     const product = new Product({
         id: uuidv4(),
-        title,
+        name,
         description,
         price,
         category,
         rating,
-        image,
+        image_url,
     });
     await product.save();
     res.status(200).json("Product created successfully")
@@ -51,14 +51,14 @@ exports.deleteProduct = async (req, res) => {
 exports.updateProduct = async (req, res) => {
     try {
         const { id } = req.params;
-        const { title, description, price, category, rating, image } = req.body;
+        const { name, description, price, category, rating, image_url } = req.body;
         const product = await Product.findByIdAndUpdate(id, {
-            title,
+            name,
             description,
             price,
             category,
             rating,
-            image
+            image_url
         }, { new: true });
 
         if (!product) {

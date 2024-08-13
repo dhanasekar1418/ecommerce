@@ -22,8 +22,8 @@ exports.createOrder = async (req,res) => {
         
         const userCartProducts = await Promise.all(userCart.products.map(async(product)=> {
             const productQuantity = product.quantity;
-            const {id,title,price,category}  = await productModel.findOne({id :product.productId});
-            return {id,title,price,category,productQuantity}
+            const {id,name,price,category}  = await productModel.findOne({id :product.productId});
+            return {id,name,price,category,productQuantity}
         }));
         console.log(userCartProducts);
         
@@ -36,7 +36,7 @@ exports.createOrder = async (req,res) => {
             products :  userCartProducts.map((product)=>
                      {  return{
                          productId :product.id,
-                         productName : product.title,
+                         productName : product.name,
                          productQuantity : product.productQuantity,
                          productPrice : product.price,
                          productCategory : product.category

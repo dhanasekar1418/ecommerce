@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 const productschema = new mongoose.Schema({
     id : String,
-    title : String,
+    name : String,
     description : String,
     price: Number,
     category : String,
-    image : String,
+    image_url : String,
     rating:[{
         rate: Number,
         count:Number
